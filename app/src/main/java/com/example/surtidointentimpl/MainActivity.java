@@ -86,12 +86,15 @@ public class MainActivity extends Activity implements OnClickListener{
 				in = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getText(R.string.telef)));
 				startActivity(in);
 				break;
-			//Acceder contactos
+			//Acceder contacto
 			case R.id.button6:
 				Toast.makeText(this, getString(R.string.opcion6), Toast.LENGTH_LONG).show();
-				in = new Intent(Intent.ACTION_VIEW);
-				in.setData(ContactsContract.Contacts.CONTENT_URI);
-				startActivity(in);
+				//Obligatorio
+				//in = new Intent(Intent.ACTION_VIEW, ContactsContract.Contacts.CONTENT_URI);
+				//startActivity(in);
+				//Optativo
+				in = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+				startActivityForResult(in, 1);
 				break;
 			//Marcar
 			case R.id.button7:
@@ -121,12 +124,15 @@ public class MainActivity extends Activity implements OnClickListener{
 			//Acceder galeria
 			case R.id.button10:
 				Toast.makeText(this, getString(R.string.ToastGaleria), Toast.LENGTH_LONG).show();
-				in = new Intent(Intent.ACTION_VIEW, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-				startActivity(in);
+				//Obligatorio
+				//in = new Intent(Intent.ACTION_VIEW, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				//startActivity(in);
+				//Optativo
+				in = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				startActivityForResult(in, 0);
 				break;
 		}
 	}
-
 
 	@Override
 	protected void onResume() {
