@@ -94,9 +94,19 @@ public class MainActivity extends Activity implements OnClickListener{
 			//Marcar
 			case R.id.button7:
 				Toast.makeText(this, getString(R.string.ToastMarcar), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getText(R.string.telef)));
+				startActivity(in);
+				break;
 			//Enviar SMS
 			case R.id.button8:
 				Toast.makeText(this, getString(R.string.ToastSMS), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_SENDTO);
+				//Numero destino
+				in.setData(Uri.parse("sms:" + getText(R.string.SMSDestino)));
+				//Contenido mensaje
+				in.putExtra(Intent.EXTRA_TEXT, getText(R.string.SMSContenido));
+				startActivity(in);
+				break;
 			//Enviar correo
 			case R.id.button9:
 				Toast.makeText(this, getString(R.string.ToastCorreo), Toast.LENGTH_LONG).show();

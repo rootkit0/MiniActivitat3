@@ -13,7 +13,7 @@
     <string name="Boton4">Google</string>
     <string name="Boton5">Llamar</string>
     <string name="Boton6">Acceder Contactos</string>
-    <string name="telef">666666666</string>
+    <string name="telef">973702700</string>
 
     <string name="lat">41.60788</string>
     <string name="lon">0.623333</string>
@@ -29,15 +29,21 @@
     <string name="opcion6">Accediendo a contactos</string>
 
     <string name="EnlaceWeb">https://www.udl.cat</string>
+
     <string name="BotonMarcar">Marcar</string>
     <string name ="ToastMarcar">Marcando el Tlfn.</string>
-    <string name="SMSDestinatario">Numero destino: 616 616 616</string>
-    <string name="SMSEnviar">Enviar SMS</string>
+
+    <string name="SMSTextView">Numero destino: 616 616 616</string>
+    <string name="BotonSMS">Enviar SMS</string>
     <string name="ToastSMS">Enviando SMS</string>
-    <string name="CorreoDestinatario">Correo destino: xbp1@alumnes.udl.cat</string>
-    <string name="CorreoEnviar">Enviar correo</string>
+    <string name="SMSDestino">616161616</string>
+    <string name="SMSContenido">Hola, estamos probando los Intents</string>
+
+    <string name="CorreoTextView">Correo destino: xbp1@alumnes.udl.cat</string>
+    <string name="BotonCorreo">Enviar correo</string>
     <string name="ToastCorreo">Enviando correo</string>
-    <string name="Galeria">Acceder galeria imagenes</string>
+
+    <string name="BotonGaleria">Acceder galeria imagenes</string>
     <string name="ToastGaleria">Accediendo a la galeria</string>
 
 </resources>
