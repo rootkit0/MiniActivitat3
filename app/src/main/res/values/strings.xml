@@ -39,11 +39,13 @@
     <string name="SMSDestino">616161616</string>
     <string name="SMSContenido">Hola, estamos probando los Intents</string>
 
-    <string name="CorreoTextView">Correo destino: xbp1@alumnes.udl.cat</string>
+    <string name="CorreoTextView">Correo destino: prueba@gmail.com</string>
     <string name="BotonCorreo">Enviar correo</string>
     <string name="ToastCorreo">Enviando correo</string>
+    <string name="CorreoDestino">prueba@gmail.com</string>
+    <string name="CorreoAsunto">Asunto</string>
+    <string name="CorreoContenido">Hola, estamos probando los Intents</string>
 
     <string name="BotonGaleria">Acceder galeria imagenes</string>
     <string name="ToastGaleria">Accediendo a la galeria</string>
-
 </resources>

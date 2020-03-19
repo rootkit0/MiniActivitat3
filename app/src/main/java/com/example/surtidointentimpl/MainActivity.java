@@ -10,6 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import androidx.core.app.ActivityCompat;
+
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -110,9 +112,18 @@ public class MainActivity extends Activity implements OnClickListener{
 			//Enviar correo
 			case R.id.button9:
 				Toast.makeText(this, getString(R.string.ToastCorreo), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_SENDTO);
+				in.setData(Uri.parse("mailto:" + getText(R.string.CorreoDestino)));
+				in.putExtra(Intent.EXTRA_SUBJECT, getText(R.string.CorreoAsunto));
+				in.putExtra(Intent.EXTRA_TEXT, getText(R.string.CorreoContenido));
+				startActivity(in);
+				break;
 			//Acceder galeria
 			case R.id.button10:
 				Toast.makeText(this, getString(R.string.ToastGaleria), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_VIEW, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				startActivity(in);
+				break;
 		}
 	}
 
