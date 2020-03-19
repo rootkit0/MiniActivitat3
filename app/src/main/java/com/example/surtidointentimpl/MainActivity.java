@@ -32,6 +32,10 @@ public class MainActivity extends Activity implements OnClickListener{
 	    Button btn4 = findViewById(R.id.button4);
 	    Button btn5 = findViewById(R.id.button5);
 	    Button btn6 = findViewById(R.id.button6);
+		Button btn7 = findViewById(R.id.button7);
+		Button btn8 = findViewById(R.id.button8);
+		Button btn9 = findViewById(R.id.button9);
+		Button btn10 = findViewById(R.id.button10);
 
 	    btn1.setOnClickListener(this);
 	    btn2.setOnClickListener(this);
@@ -39,6 +43,10 @@ public class MainActivity extends Activity implements OnClickListener{
 	    btn4.setOnClickListener(this);
 	    btn5.setOnClickListener(this);
 	    btn6.setOnClickListener(this);
+		btn7.setOnClickListener(this);
+		btn8.setOnClickListener(this);
+		btn9.setOnClickListener(this);
+		btn10.setOnClickListener(this);
 
 		if (Build.VERSION.SDK_INT >= 23)
 			if (! ckeckPermissions())
