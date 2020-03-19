@@ -63,7 +63,6 @@ public class MainActivity extends Activity implements OnClickListener{
 			case R.id.button2:
 				Toast.makeText(this, getString(R.string.opcion2), Toast.LENGTH_LONG).show();
 				in = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + address));
-				//in = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + textToSearch));
 				startActivity(in);
 				break;
 			//Accediendo web
@@ -75,7 +74,6 @@ public class MainActivity extends Activity implements OnClickListener{
 			//Buscando en google
 			case R.id.button4:
 				Toast.makeText(this, getString(R.string.opcion4), Toast.LENGTH_LONG).show();
-				//in = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q=" + textToSearch));
 				in = new Intent(Intent.ACTION_WEB_SEARCH);
 				in.putExtra(SearchManager.QUERY, textToSearch);
 				startActivity(in);
@@ -95,16 +93,16 @@ public class MainActivity extends Activity implements OnClickListener{
 				break;
 			//Marcar
 			case R.id.button7:
-
+				Toast.makeText(this, getString(R.string.ToastMarcar), Toast.LENGTH_LONG).show();
 			//Enviar SMS
 			case R.id.button8:
-
+				Toast.makeText(this, getString(R.string.ToastSMS), Toast.LENGTH_LONG).show();
 			//Enviar correo
 			case R.id.button9:
-
+				Toast.makeText(this, getString(R.string.ToastCorreo), Toast.LENGTH_LONG).show();
 			//Acceder galeria
 			case R.id.button10:
-
+				Toast.makeText(this, getString(R.string.ToastGaleria), Toast.LENGTH_LONG).show();
 		}
 	}
 

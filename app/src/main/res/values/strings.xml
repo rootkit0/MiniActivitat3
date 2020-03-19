@@ -30,11 +30,14 @@
 
     <string name="EnlaceWeb">https://www.udl.cat</string>
     <string name="BotonMarcar">Marcar</string>
+    <string name ="ToastMarcar">Marcando el Tlfn.</string>
     <string name="SMSDestinatario">Numero destino: 616 616 616</string>
     <string name="SMSEnviar">Enviar SMS</string>
+    <string name="ToastSMS">Enviando SMS</string>
     <string name="CorreoDestinatario">Correo destino: xbp1@alumnes.udl.cat</string>
     <string name="CorreoEnviar">Enviar correo</string>
+    <string name="ToastCorreo">Enviando correo</string>
     <string name="Galeria">Acceder galeria imagenes</string>
-
+    <string name="ToastGaleria">Accediendo a la galeria</string>
 
 </resources>
