@@ -53,22 +53,26 @@ public class MainActivity extends Activity implements OnClickListener{
 		final String textToSearch = getString(R.string.textoABuscar);
 
 		switch (v.getId()) {
+			//Localizacion coordenadas
 			case R.id.button1:
 				Toast.makeText(this, getString(R.string.opcion1), Toast.LENGTH_LONG).show();
 				in = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:" + lat + ',' + lon));
 				startActivity(in);
 				break;
+			//Localizacion direccion
 			case R.id.button2:
 				Toast.makeText(this, getString(R.string.opcion2), Toast.LENGTH_LONG).show();
 				in = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + address));
 				//in = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=" + textToSearch));
 				startActivity(in);
 				break;
+			//Accediendo web
 			case R.id.button3:
 				Toast.makeText(this, getString(R.string.opcion3), Toast.LENGTH_LONG).show();
 				in = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 				startActivity(in);
 				break;
+			//Buscando en google
 			case R.id.button4:
 				Toast.makeText(this, getString(R.string.opcion4), Toast.LENGTH_LONG).show();
 				//in = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com/search?q=" + textToSearch));
@@ -76,13 +80,32 @@ public class MainActivity extends Activity implements OnClickListener{
 				in.putExtra(SearchManager.QUERY, textToSearch);
 				startActivity(in);
 				break;
+			//Llamar
 			case R.id.button5:
-                callPhone();
+				Toast.makeText(this, getString(R.string.opcion5), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getText(R.string.telef)));
+				startActivity(in);
 				break;
+			//Acceder contactos
 			case R.id.button6:
-				accessContacts();
+				Toast.makeText(this, getString(R.string.opcion6), Toast.LENGTH_LONG).show();
+				in = new Intent(Intent.ACTION_VIEW);
+				in.setData(ContactsContract.Contacts.CONTENT_URI);
+				startActivity(in);
 				break;
-			}
+			//Marcar
+			case R.id.button7:
+
+			//Enviar SMS
+			case R.id.button8:
+
+			//Enviar correo
+			case R.id.button9:
+
+			//Acceder galeria
+			case R.id.button10:
+
+		}
 	}
 
 
@@ -119,62 +142,6 @@ public class MainActivity extends Activity implements OnClickListener{
 				new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE},
 				0);
 	}
-
-	private void requestPermissionsCallPhone() {
-		ActivityCompat.requestPermissions(MainActivity.this,
-				new String[]{Manifest.permission.CALL_PHONE},
-				0);
-	}
-
-	private void requestPermissionsReadContacts() {
-		ActivityCompat.requestPermissions(MainActivity.this,
-				new String[]{Manifest.permission.READ_CONTACTS},
-				0);
-	}
-
-	private void accessContacts() {
-
-		if (Build.VERSION.SDK_INT >= 23) {
-			if (ckeckPermissionsReadContacts()) {
-				accessContactsAction();
-			} else {
-				requestPermissionsReadContacts();
-			}
-		}
-		else {
-			accessContactsAction();
-		}
-	}
-
-	private void accessContactsAction() {
-		Intent in;
-
-		Toast.makeText(this, getString(R.string.opcion6), Toast.LENGTH_LONG).show();
-		in = new Intent(Intent.ACTION_VIEW);
-		in.setData(ContactsContract.Contacts.CONTENT_URI);
-		startActivity(in);
-	}
-
-
-	private void callPhone() {
-		Intent in;
-
-		if (Build.VERSION.SDK_INT >= 23) {
-		if (ckeckPermissionsCallPhone()) {
-			Toast.makeText(this, getString(R.string.opcion5), Toast.LENGTH_LONG).show();
-			in = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getText(R.string.telef)));
-			startActivity(in);
-		} else {
-			    requestPermissionsCallPhone();
-		}
-		}
-		else {
-			Toast.makeText(this, getString(R.string.opcion5), Toast.LENGTH_LONG).show();
-			in = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + getText(R.string.telef)));
-			startActivity(in);
-		}
-	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
